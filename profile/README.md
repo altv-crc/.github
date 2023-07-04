@@ -21,7 +21,76 @@ A collection of useful resources, and recommendations to build faster.
 
 ## Recommended Infrastructure
 
-<img src="https://github.com/altv-crc/.github/assets/21284100/4955c2d8-8bcd-4181-b84d-35b5fdf03392" width="700" />
-<br />
-<sup>Updated July 2023</sup>
+```mermaid
+graph TD
+    category((category))
+    not_created[* = Pending]
 
+    %% Initial Category
+    altv_typescript[[altv-typescript]]
+    altv_typescript --> cat_resources
+
+    cat_resources((resources))
+    cat_resources --> cat_core
+    cat_resources --> cat_utility
+   
+
+    %% Core
+    cat_core((Core))
+    cat_core --> crc_db
+    cat_core --> crc_db_sql
+
+    %% Database
+    crc_db(crc-db)
+    crc_db --> crc_login
+    crc_db --> crc_discord_login
+    crc_db_sql(crc-db-sql*)
+    crc_db_sql --> crc_login
+    crc_db_sql --> crc_discord_login
+   
+
+    %% Authentication
+    crc_login(crc-login)
+    crc_discord_login(crc-discord-login)
+    crc_login --> cat_character
+    crc_discord_login --> cat_character
+
+    %% Character
+    cat_character((Character))
+    cat_character --> crc_char_select(crc-select-character*)
+    crc_char_select --> crc_char_create(crc-create-character*)
+    crc_char_select --> cat_spawn
+    crc_char_create --> cat_spawn
+
+    %% Spawn
+    cat_spawn((Spawn))
+    cat_spawn --> crc_new_spawn(crc-new-spawn*)
+    cat_spawn --> crc_restore_spawn(crc-restore-spawn*)
+    crc_new_spawn --> cat_world
+    crc_restore_spawn --> cat_world
+
+    %% World
+    cat_world((World))
+    cat_world --> cat_behavior
+    cat_world --> cat_banking
+   
+    %% Behavior
+    cat_behavior((Behavior))
+    cat_behavior --> crc_respawn(crc-respawn*)
+
+    %% Banking
+    cat_banking((Banking))
+    cat_banking --> crc_paychecks(crc-paychecks*)
+    cat_banking --> crc_atm(crc-atms*)
+    cat_banking --> crc_banks(crc-banks*)
+    cat_banking --> cat_jobs
+
+    %% Jobs
+    cat_jobs((Jobs))
+
+
+    %% Utility
+    cat_utility((Utility))
+    cat_utility --> crc_instructional_buttons(crc-instructional-buttons)
+    crc_instructional_buttons --> crc_native_menu(crc-native-menu)
+```
