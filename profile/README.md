@@ -28,15 +28,13 @@ graph TD
 
     %% Initial Category
     altv_typescript[[altv-typescript]]
-    altv_typescript --> cat_resources
+    altv_typescript --> cat_core
+    altv_typescript --> cat_utility
 
-    cat_resources((resources))
-    cat_resources --> cat_core
-    cat_resources --> cat_utility
    
 
     %% Core
-    cat_core((Core))
+    cat_core((Server Flow))
     cat_core --> crc_db
     cat_core --> crc_db_sql
 
@@ -87,7 +85,6 @@ graph TD
 
     %% Jobs
     cat_jobs((Jobs))
-
 
     %% Utility
     cat_utility((Utility))
