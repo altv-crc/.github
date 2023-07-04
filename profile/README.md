@@ -33,9 +33,9 @@ graph TD
     not_created[* = Pending]
 
     %% Initial Category
-    altv_typescript[[altv-typescript]]
-    altv_typescript --> cat_core
-    altv_typescript --> cat_utility
+    altv_crc_core[[altv-crc-core]]
+    altv_crc_core --> cat_core
+    altv_crc_core --> cat_utility
 
     %% Core
     cat_core((Server Flow))
