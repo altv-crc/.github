@@ -1,6 +1,17 @@
 # alt:V Cross Resource Community
 
-A collection of useful resources, and recommendations to build faster.
+This is an experimental project that will allow users to quickly drag / drop resources into a structured server infrastructure.
+
+Think of each resource as a micro-service for your gamemode.
+
+## Ideology
+
+- TypeScript
+- Very small resources
+- Maximum performance with least overhead
+- Shared database so credentials automatically are associated with all other resources
+- Near one-click solutions for most server components
+- Cross resource compatability
 
 ## Discussions & Help
 
@@ -16,15 +27,6 @@ A collection of useful resources, and recommendations to build faster.
 ![Visual Studio Code](https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white)
 <br />
 ![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white)
-
-## Ideology
-
-- TypeScript
-- Very small resources
-- Maximum performance with least overhead
-- Near one-click solutions for most server components
-- Cross resource compatability
-
 
 ## Recommended Infrastructure
 
