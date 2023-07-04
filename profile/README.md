@@ -21,6 +21,8 @@ A collection of useful resources, and recommendations to build faster.
 
 ## Recommended Infrastructure
 
+Below is a general mindmap that shows what resources need to exist to create a login flow that leads a player to the eventual game loop.
+
 ```mermaid
 graph TD
     category((category))
@@ -64,17 +66,19 @@ graph TD
     cat_spawn((Spawn))
     cat_spawn --> crc_new_spawn(crc-new-spawn*)
     cat_spawn --> crc_restore_spawn(crc-restore-spawn*)
-    crc_new_spawn --> cat_world
-    crc_restore_spawn --> cat_world
+    cat_spawn --> crc_respawn(crc-respawn*)
+    crc_new_spawn --> cat_game_loop
+    crc_restore_spawn --> cat_game_loop
+    crc_respawn --> cat_game_loop
 
-    %% World
-    cat_world((World))
-    cat_world --> cat_behavior
-    cat_world --> cat_banking
+    %% Game Loop
+    cat_game_loop((Game Loop))
+    cat_game_loop --> cat_behavior
+    cat_game_loop --> cat_banking
    
     %% Behavior
     cat_behavior((Behavior))
-    cat_behavior --> crc_respawn(crc-respawn*)
+    cat_behavior --> tbd(tbd*)
 
     %% Banking
     cat_banking((Banking))
