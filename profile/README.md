@@ -37,8 +37,6 @@ graph TD
     altv_typescript --> cat_core
     altv_typescript --> cat_utility
 
-   
-
     %% Core
     cat_core((Server Flow))
     cat_core --> crc_db
@@ -51,7 +49,6 @@ graph TD
     crc_db_sql(crc-db-sql*)
     crc_db_sql --> crc_login
     crc_db_sql --> crc_discord_login
-   
 
     %% Authentication
     crc_login(crc-login)
@@ -96,6 +93,13 @@ graph TD
 
     %% Utility
     cat_utility((Utility))
+
     cat_utility --> crc_instructional_buttons(crc-instructional-buttons)
     crc_instructional_buttons --> crc_native_menu(crc-native-menu)
+
+    cat_utility --> crc_chat(crc-chat*)
+
+    cat_utility --> crc_voice(crc-voice*)
 ```
+
+[Built with mermaid.live](https://mermaid.live/)
