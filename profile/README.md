@@ -23,6 +23,10 @@ A collection of useful resources, and recommendations to build faster.
 
 Below is a general mindmap that shows what resources need to exist to create a login flow that leads a player to the eventual game loop.
 
+Every section with `crc-` should be considered an individual resource that has been built, or needs to be built.
+
+The `*` means the resource has not been built.
+
 ```mermaid
 graph TD
     category((category))
