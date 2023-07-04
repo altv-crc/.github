@@ -2,6 +2,13 @@
 
 A collection of useful resources, and recommendations to build faster.
 
+## Discussions & Help
+
+- [Announcements](https://github.com/orgs/altv-crc/discussions/categories/announcements)
+- [Plugins](https://github.com/orgs/altv-crc/discussions/categories/plugins)
+- [Q & A](https://github.com/orgs/altv-crc/discussions/categories/q-a)
+- [Tutorials](https://github.com/orgs/altv-crc/discussions/categories/tutorials)
+
 ## Development Stack
 
 ![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
