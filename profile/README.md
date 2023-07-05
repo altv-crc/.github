@@ -63,6 +63,16 @@ function handleActions(functions: { set?: Array<{ text: string; input: string }>
 alt.on('crc-instructional-buttons', handleActions);
 ```
 
+* Why this event specification?
+  
+This ensures that as you add new functionality, the previous events remain always useable. In most cases.
+
+Users can upgrade to new versions of individual resources and still be able to call those events.
+
+This ensures backwards compatability as long as the developer chooses to retain it.
+
+Objects can always add new parameters easily. Arrays cannot.
+
 ## Recommended Infrastructure
 
 Below is a general mindmap that shows what resources need to exist to create a login flow that leads a player to the eventual game loop.
