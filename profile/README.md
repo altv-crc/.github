@@ -87,46 +87,49 @@ The `*` means the resource has not been built.
 
 ```mermaid
 graph TD
+    classDef pending fill:#6b384c
+    classDef ready fill:#205991
+
     category((category))
-    not_created[* = Pending]
+    not_created[* = Pending]:::pending
 
     %% Initial Category
-    altv_crc_core[[altv-crc-core]]
+    altv_crc_core[[altv-crc-core]]:::ready
     altv_crc_core --> cat_core
     altv_crc_core --> cat_utility
 
     %% Core
     cat_core((Server Flow))
-    cat_core --> crc_db
+    cat_core --> crc_db:::ready
     cat_core --> crc_db_sql
 
     %% Database
-    crc_db(crc-db)
+    crc_db(crc-db):::ready
     crc_db --> crc_login
     crc_db --> crc_discord_login
-    crc_db_sql(crc-db-sql*)
+    crc_db_sql(crc-db-sql*):::pending
     crc_db_sql --> crc_login
     crc_db_sql --> crc_discord_login
 
     %% Authentication
-    crc_login(crc-login)
-    crc_discord_login(crc-discord-login)
+    crc_login(crc-login):::ready
+    crc_discord_login(crc-discord-login):::ready
     crc_login --> cat_character
     crc_discord_login --> cat_character
 
     %% Character
     cat_character((Character))
-    cat_character --> crc_char_select(crc-select-character*)
-    crc_char_select --> crc_char_preview(crc-character-preview*)
-    crc_char_select --> crc_char_create(crc-create-character*)
+    cat_character --> crc_char_select(crc-select-character):::ready
+    crc_char_select --> crc_char_preview(crc-character-preview*):::pending
+    crc_char_select --> crc_char_create(crc-create-character*):::pending
     crc_char_select --> cat_spawn
     crc_char_create --> cat_spawn
 
     %% Spawn
     cat_spawn((Spawn))
-    cat_spawn --> crc_new_spawn(crc-new-spawn*)
-    cat_spawn --> crc_restore_spawn(crc-restore-spawn*)
-    cat_spawn --> crc_respawn(crc-respawn*)
+    cat_spawn --> crc_new_spawn(crc-new-spawn*):::pending
+    cat_spawn --> crc_restore_spawn(crc-restore-spawn*):::pending
+    cat_spawn --> crc_respawn(crc-respawn*):::pending
     crc_new_spawn --> cat_game_loop
     crc_restore_spawn --> cat_game_loop
     crc_respawn --> cat_game_loop
@@ -138,13 +141,13 @@ graph TD
    
     %% Behavior
     cat_behavior((Behavior))
-    cat_behavior --> tbd(tbd*)
+    cat_behavior --> tbd(tbd*):::pending
 
     %% Banking
     cat_banking((Banking))
-    cat_banking --> crc_paychecks(crc-paychecks*)
-    cat_banking --> crc_atm(crc-atms*)
-    cat_banking --> crc_banks(crc-banks*)
+    cat_banking --> crc_paychecks(crc-paychecks*):::pending
+    cat_banking --> crc_atm(crc-atms*):::pending
+    cat_banking --> crc_banks(crc-banks*):::pending
     cat_banking --> cat_jobs
 
     %% Jobs
@@ -153,12 +156,12 @@ graph TD
     %% Utility
     cat_utility((Utility))
 
-    cat_utility --> crc_instructional_buttons(crc-instructional-buttons)
-    crc_instructional_buttons --> crc_native_menu(crc-native-menu)
+    cat_utility --> crc_instructional_buttons(crc-instructional-buttons):::ready
+    crc_instructional_buttons --> crc_native_menu(crc-native-menu):::ready
 
-    cat_utility --> crc_chat(crc-chat*)
+    cat_utility --> crc_chat(crc-chat*):::pending
 
-    cat_utility --> crc_voice(crc-voice*)
+    cat_utility --> crc_voice(crc-voice*):::pending
 ```
 
 [Built with mermaid.live](https://mermaid.live/)
