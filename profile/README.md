@@ -68,6 +68,7 @@ graph TD
     %% Character
     cat_character((Character))
     cat_character --> crc_char_select(crc-select-character*)
+    crc_char_select --> crc_char_preview(crc-character-preview*)
     crc_char_select --> crc_char_create(crc-create-character*)
     crc_char_select --> cat_spawn
     crc_char_create --> cat_spawn
