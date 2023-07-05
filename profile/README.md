@@ -13,12 +13,16 @@ Think of each resource as a micro-service for your gamemode.
 - Near one-click solutions for most server components
 - Cross resource compatability
 
+## Installation
+
+- [Install on Windows](https://github.com/orgs/altv-crc/discussions/1)
+- [Install a Plugin](https://github.com/orgs/altv-crc/discussions/2)
+
 ## Discussions & Help
 
 - [Announcements](https://github.com/orgs/altv-crc/discussions/categories/announcements)
 - [Plugins](https://github.com/orgs/altv-crc/discussions/categories/plugins)
 - [Q & A](https://github.com/orgs/altv-crc/discussions/categories/q-a)
-- [Tutorials](https://github.com/orgs/altv-crc/discussions/categories/tutorials)
 
 ## Development Stack
 
