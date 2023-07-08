@@ -69,10 +69,11 @@ graph TD
     %% Authentication
     crc_login(crc-login):::ready
     crc_discord_login(crc-discord-login):::ready
-    crc_login --> cat_character
-    crc_discord_login --> cat_character
     crc_login --> crc_ban_handler(crc-ban-handler):::ready
     crc_discord_login --> crc_ban_handler
+    crc_login --> cat_character
+    crc_discord_login --> cat_character
+    
 
     %% Character
     cat_character((Character))
