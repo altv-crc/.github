@@ -32,51 +32,6 @@ Think of each resource as a micro-service for your gamemode.
 <br />
 ![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white)
 
-## Cross Resource Event Specifications
-
-Every resource should have an event system related to its name.
-
-* If your resource is called `crc-my-resource` then your resource should recieve events through it.
-
-```ts
-alt.on('crc-my-resource', (functions: { a?: string, b?: string) => {
-    alt.log(`got action`);
-});
-```
-
-* Event parameters should always be a single object that can be deconstructed to point towards specific functions
-
-```ts
-function handleActions(functions: { set?: Array<{ text: string; input: string }>; clear?: boolean }) {
-    if (typeof functions !== 'object') {
-        return;
-    }
-
-    // This allows for action properties to clearly be defined and pushed to the right functions
-    const { set, clear } = functions;
-
-    if (set) {
-        setFunc(set);
-    }
-
-    if (clear) {
-        clearFunc();
-    }
-}
-
-alt.on('crc-instructional-buttons', handleActions);
-```
-
-* Why this event specification?
-  
-This ensures that as you add new functionality, the previous events remain always useable. In most cases.
-
-Users can upgrade to new versions of individual resources and still be able to call those events.
-
-This ensures backwards compatability as long as the developer chooses to retain it.
-
-Objects can always add new parameters easily. Arrays cannot.
-
 ## Recommended Infrastructure
 
 Below is a general mindmap that shows what resources need to exist to create a login flow that leads a player to the eventual game loop.
@@ -116,6 +71,8 @@ graph TD
     crc_discord_login(crc-discord-login):::ready
     crc_login --> cat_character
     crc_discord_login --> cat_character
+    crc_login --> crc_ban_handler(crc-ban-handler):::ready
+    crc_discord_login --> crc_ban_handler
 
     %% Character
     cat_character((Character))
