@@ -74,12 +74,19 @@ graph TD
     crc_login --> cat_character
     crc_discord_login --> cat_character
     
+    %% Appearance
+    crc_appearance(crc-appearance):::ready
+    crc_char_create --> crc_appearance
+    crc_restore_spawn --> crc_appearance
+    crc_new_spawn --> crc_appearance
+    crc_char_preview --> crc_appearance
+    crc_respawn --> crc_appearance
 
     %% Character
     cat_character((Character))
     cat_character --> crc_char_select(crc-select-character):::ready
-    crc_char_select --> crc_char_preview(crc-character-preview*):::pending
-    crc_char_select --> crc_char_create(crc-create-character*):::pending
+    crc_char_select --> crc_char_preview(crc-preview-character):::ready
+    crc_char_select --> crc_char_create(crc-create-character*):::ready
     crc_char_select --> cat_spawn
     crc_char_create --> cat_spawn
 
