@@ -86,7 +86,7 @@ graph TD
     cat_character((Character))
     cat_character --> crc_char_select(crc-select-character):::ready
     crc_char_select --> crc_char_preview(crc-preview-character):::ready
-    crc_char_select --> crc_char_create(crc-create-character*):::ready
+    crc_char_select --> crc_char_create(crc-create-character):::ready
     crc_char_select --> cat_spawn
     crc_char_create --> cat_spawn
 
