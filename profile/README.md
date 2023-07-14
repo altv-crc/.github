@@ -77,8 +77,7 @@ graph TD
     %% Appearance
     crc_appearance(crc-appearance):::ready
     crc_char_create --> crc_appearance
-    crc_restore_spawn --> crc_appearance
-    crc_new_spawn --> crc_appearance
+    crc_spawn --> crc_appearance
     crc_char_preview --> crc_appearance
     crc_respawn --> crc_appearance
 
@@ -93,11 +92,9 @@ graph TD
 
     %% Spawn
     cat_spawn((Spawn))
-    cat_spawn --> crc_new_spawn(crc-new-spawn*):::pending
-    cat_spawn --> crc_restore_spawn(crc-restore-spawn*):::pending
+    cat_spawn --> crc_spawn(crc-spawn):::ready
     cat_spawn --> crc_respawn(crc-respawn*):::pending
-    crc_new_spawn --> cat_game_loop
-    crc_restore_spawn --> cat_game_loop
+    crc_spawn --> cat_game_loop
     crc_respawn --> cat_game_loop
 
     %% Game Loop
