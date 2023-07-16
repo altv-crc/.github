@@ -76,6 +76,7 @@ graph TD
     
     %% Appearance
     crc_appearance(crc-appearance):::ready
+    crc_appearance --> crc_default_clothes(crc-default-clothes):::ready
     crc_char_create --> crc_appearance
     crc_spawn --> crc_appearance
     crc_char_preview --> crc_appearance
