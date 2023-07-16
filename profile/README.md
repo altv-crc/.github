@@ -105,7 +105,7 @@ graph TD
    
     %% Behavior
     cat_behavior((Behavior))
-    cat_behavior --> tbd(tbd*):::pending
+    cat_behavior --> crc_auto-save(crc-auto-save):::ready
 
     %% Banking
     cat_banking((Banking))
